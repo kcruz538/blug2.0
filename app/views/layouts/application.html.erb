@@ -30,8 +30,20 @@
     <p class="sign_in">Admin Login</p>
 
   </div>
+  <div id="main_content">
+    <div id="header">
+      <p>All Posts</p>
+      <button class="button"><%= link_to "New Post", new_post_path %></button>
+      <button class="button">Log out</button>
+    </div>
+  </div>
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert") %>
+  <%end%>
+  <%= yield %>
 
-<%= yield %>
+</div>
+
 
 </body>
 </html>
